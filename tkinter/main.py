@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class Calculator:
-    def _init_(self):
+    def __init__(self):
         self.root = tk.Tk()
         self.root.geometry("300x300")
         self.label = tk.Label(self.root, text="Calculator")
@@ -22,7 +22,7 @@ class Calculator:
     # Creating the buttons
     def create_buttons(self):
         for i in range(19):
-            btn = tk.Button(self.frame, text=" ", bg="gray", command=lambda x=i: self.btn_click(x))  # Assigning button labels
+            btn = tk.Button(self.frame, text=" ", bg="black", command=lambda x=i: self.btn_click(x))  # Assigning button labels
             self.num_Buttons.append(btn)
             btn.grid(row=i//4, column=i%4, sticky="nsew")
 
@@ -72,4 +72,4 @@ class Calculator:
             self.entry.insert(tk.END, label)
 
 if __name__ == "__main__":
-    calc = Calculator
+    calc = Calculator()
